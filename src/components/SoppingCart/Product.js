@@ -1,19 +1,21 @@
+import Image from "next/image";
+import { images } from "../../../next.config";
 
 
-import React from 'react'
+
 
 const Product = ({data, addToCart}) => {
 
     const {name, price, id} = data;
 
   return (
-    <div className="product">
+    <figure className="product bg-orange-400 border-black m-3 shadow-xl rounded-md text-black">
+        <img src {...images} />
         <h4>{name}</h4>
-        <img></img>
-        <h5>$ {price}</h5>
+        <h5 >$ {price}</h5>
         <button onClick={() => addToCart(id)}>Agregar</button>
-    </div>
+    </figure>
   );
 };
 
-export default product;
+export default Product;
