@@ -1,81 +1,81 @@
 
 import { useState } from "react"
 import CarouselItems from "./CarouselItems"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAnglesRight, faAnglesLeft } from "@fortawesome/free-solid-svg-icons"
 
-const items =[{
-    id:1,
-    image:"",
-    text:"",
+const items = [{
+    id: 1,
+    image: "https://imagenes.elpais.com/resizer/xOE7Oeshes4HMCo0BjguULLDLdA=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/4UZ7YMWXB5VGX2IEDT4VCLK7KU.jpg",
+    text: "imagen 1",
 
-},{
-    id:2,
-    image:"",
-    text:"",
+}, {
+    id: 2,
+    image: "https://img.freepik.com/fotos-premium/hermosa-cordillera-refleja-ia-generativa-aguas-tranquilas_188544-9117.jpg",
+    text: "imagen 2",
 
-},{
-    id:3,
-    image:"",
-    text:"",
+}, {
+    id: 3,
+    image: "https://fondosmil.com/fondo/17009.jpg",
+    text: "imagen 3",
 
-},{
-    id:4,
-    image:"",
-    text:"",
+}, {
+    id: 4,
+    image: "https://wallpaperaccess.com/full/13190.jpg",
+    text: "imagen 4",
+
+}, {
+    id: 5,
+    image: "https://phototravel.es/wp-content/uploads/viajar-etiopia.jpg",
+    text: "imagen 5",
 
 }]
-
 
 const Carousel = () => {
 
     // const [item, setItems] = useState(item)
-    const [activeIndex, setActiveIndex] = useState(0)
+    const [activeIndex, setActiveIndex] = useState(2)
 
 
-    const hancleClick1 = () =>{
-        let acumulado= -1
-        setActiveIndex(acumulado)
+    const handleNext = () => {
+
+     
+         setActiveIndex(activeIndex < items.length-1 ? activeIndex + 1: 0);
+
+
         console.log(activeIndex)
     }
-    const hancleClick2 = () =>{
-        let acumulado = 1
-        setActiveIndex( acumulado)
+    const handlePrev = () => {
+        
+
+     
+        setActiveIndex(activeIndex> 0 ? activeIndex -1 : items.length-1)
+
+
         console.log(activeIndex)
     }
-
-
-
-
 
     return (
-        <section className="pt-20">
-            <div className="flex justify-between ">
+        <section className="pt-20 w-full  ">
+            <div className=" h-[400px] w-full relative">
+                <div style={{ background: `url(${items[activeIndex].image}) no-repeat center/cover` }} className="flex justify-between bg-black h-full w-[70%] items-center duration-500 relative m-auto rounded-lg  ">
+                    <h2 className="absolute bottom-0 pl-[10%] pb-7 text-xl">{items[activeIndex].text}</h2>
+                    <div onClick={handlePrev} className=" ml-3 rounded-full bg-black/20 / text-xl  ">
 
-                {
-                items.map((ele)=><CarouselItems key={ele.id}/>)
-                }
-                
-                {/* <div className="bg-gray-400 w-full h-60">
-                    <img></img>
-                    <h3 className="text-black ">titulo 1</h3>
-                </div>
-                <div className="bg-red-600 w-full h-60">
-                    <img></img>
-                    <h3 className="text-black">titulo 2</h3>
-                </div>
-                <div className="bg-blue-600 w-full h-60">
-                    <img></img>
-                    <h3 className="text-black">titulo 3</h3>
-                </div>
-                <div className="bg-green-800 w-full h-60">
-                    <img></img>
-                    <h3 className="text-black">titulo 4</h3>
-                </div> */}
+                        <FontAwesomeIcon className="cursor-pointer p-1" icon={faAnglesLeft}  size="xl" style={{ "--fa-primary-color": "#7f8b9f", "--fa-secondary-color": "#e70d0d", }} />
 
+                    </div>
+
+                    <div onClick={handleNext} className="mr-3 rounded-full bg-black/20 text-xl">
+
+                        <FontAwesomeIcon className="cursor-pointer p-1" icon={faAnglesRight} size="xl" style={{ "--fa-primary-color": "#7f8b9f", "--fa-secondary-color": "#adadae", }} />
+
+                    </div>
+
+                </div>
             </div>
-            <button onClick={hancleClick1} className="text-black">izq</button>
-            <button onClick={hancleClick2} className="text-black">der</button>
-        </section>
 
+        </section>
 
     )
 }
