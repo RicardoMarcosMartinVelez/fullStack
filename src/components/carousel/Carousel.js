@@ -61,7 +61,7 @@ const Carousel = () => {
                     className="flex justify-between bg-black h-full w-[90%] sm:w-[80%] xl:w-[70%] 2xl:w-[60%] items-center duration-300 relative m-auto rounded-lg overflow-auto">
 
                     <div className="bg-transparent hover:bg-black/50 absolute bottom-0 pl-[10%] w-full pb-7">
-                        <a href="" className=" text-xl">{items[activeIndex].text}</a>
+                        <a href="" className=" text-xl text-slate-100">{items[activeIndex].text}</a>
                     </div>
 
                     <CarouselControls
