@@ -1,8 +1,9 @@
 
 import { useState } from "react"
-import CarouselItems from "./CarouselItems"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleRight, faAngleLeft, faCircle } from "@fortawesome/free-solid-svg-icons"
+import CarouselControls from "./CarouseControls"
+import CarouselDots from "./CarouselDots"
 
 const items = [{
     id: 1,
@@ -39,23 +40,16 @@ const Carousel = () => {
 
     const handleNext = () => {
 
-
         setActiveIndex(activeIndex < items.length - 1 ? activeIndex + 1 : 0);
 
-
-        console.log(activeIndex)
     }
     const handlePrev = () => {
 
-
-
         setActiveIndex(activeIndex > 0 ? activeIndex - 1 : items.length - 1)
 
-
-        console.log(activeIndex)
     }
 
-    const goToItem=(e)=> setActiveIndex(e)
+    const goToItem = (e) => setActiveIndex(e)
 
     return (
         <section className="pt-20 pb-20 w-full ">
@@ -68,30 +62,18 @@ const Carousel = () => {
                     <div className="bg-transparent hover:bg-black/50 absolute bottom-0 pl-[10%] w-full pb-7">
                         <a href="" className=" text-xl">{items[activeIndex].text}</a>
                     </div>
-
-                    <div onClick={handlePrev}
-                        className=" flex items-center pl-3 pr-3 rounded-l-lg bg-transparent hover:bg-gradient-to-r hover:from-black/25 hover:to-transparent transition-bg duration-300 h-full text-xl cursor-pointer">
-
-                        <FontAwesomeIcon className="cursor-pointer p-1 " icon={faAngleLeft} size="xl" style={{ "--fa-primary-color": "#7f8b9f", "--fa-secondary-color": "#e70d0d", }} />
-
-                    </div>
-
-                    <div onClick={handleNext}
-                        className="flex items-center pr-3 pl-3 rounded-r-lg bg-transparent hover:bg-gradient-to-l hover:from-black/25 hover:to-transparent duration-300 h-full text-xl cursor-pointer">
-
-                        <FontAwesomeIcon className="cursor-pointer p-1" icon={faAngleRight} size="xl" style={{ "--fa-primary-color": "#7f8b9f", "--fa-secondary-color": "#adadae", }} />
-
-                    </div>
+                    <>
+                        <CarouselControls
+                            next={handleNext}
+                            prev={handlePrev} />
+                    </>
 
                 </div>
-                <div className="flex justify-center pt-5 ">
-
-                    {items.map((item, index) => (
-                        <span key={index} onClick={()=>goToItem(index)} className="px-2 cursor-pointer">
-                            <FontAwesomeIcon  icon={faCircle} size="sm" style={{ color: "#262627", }} />
-                        </span>))}
-
-                </div>
+                <>
+                    <CarouselDots
+                        data={items}
+                        goToItem={goToItem} />
+                </>
 
             </div>
 
