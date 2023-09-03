@@ -1,9 +1,8 @@
 
 import { useState } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faAngleRight, faAngleLeft, faCircle } from "@fortawesome/free-solid-svg-icons"
 import CarouselControls from "./CarouseControls"
 import CarouselDots from "./CarouselDots"
+
 
 const items = [{
     id: 1,
@@ -54,6 +53,7 @@ const Carousel = () => {
     return (
         <section className="pt-20 pb-20 w-full ">
             <div className=" h-[400px] w-full">
+            
                 <div style={{
                     background: `url(${items[activeIndex].image}) no-repeat 80% center/cover`,
                 }}
@@ -62,15 +62,16 @@ const Carousel = () => {
                     <div className="bg-transparent hover:bg-black/50 absolute bottom-0 pl-[10%] w-full pb-7">
                         <a href="" className=" text-xl">{items[activeIndex].text}</a>
                     </div>
-                    <>
-                        <CarouselControls
-                            next={handleNext}
-                            prev={handlePrev} />
-                    </>
-
+                            
+                    <CarouselControls
+                        next={handleNext}
+                        prev={handlePrev} />
+                
                 </div>
+
                 <>
                     <CarouselDots
+                        activeIndex={activeIndex}
                         data={items}
                         goToItem={goToItem} />
                 </>
