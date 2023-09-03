@@ -5,6 +5,5 @@ export const TYPES = {
         DELETE_ONE_PRODUCT : "DELETE_ONE_PRODUCT",
         DELETE_ALL_PRODUCTS : "DELETE_ALL_PRODUCTS",
         RESET_CART : "RESET_CART",
-        ADD_CUPON : "ADD_CUPON",
-        ENLARGE_COMBO : "ENLARGE_COMBO",
+        
 }
