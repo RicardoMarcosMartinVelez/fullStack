@@ -33,9 +33,10 @@ const items = [{
 
 const Carousel = () => {
 
-    // const [item, setItems] = useState(item)
+
     const [activeIndex, setActiveIndex] = useState(2)
 
+    //Funciones manejadoras
 
     const handleNext = () => {
 
@@ -53,7 +54,7 @@ const Carousel = () => {
     return (
         <section className="pt-20 pb-20 w-full ">
             <div className=" h-[400px] w-full">
-            
+
                 <div style={{
                     background: `url(${items[activeIndex].image}) no-repeat 80% center/cover`,
                 }}
@@ -62,11 +63,11 @@ const Carousel = () => {
                     <div className="bg-transparent hover:bg-black/50 absolute bottom-0 pl-[10%] w-full pb-7">
                         <a href="" className=" text-xl">{items[activeIndex].text}</a>
                     </div>
-                            
+
                     <CarouselControls
                         next={handleNext}
                         prev={handlePrev} />
-                
+
                 </div>
 
                 <>

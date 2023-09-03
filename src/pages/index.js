@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className='bg-white min-h-screen '>
-     {/* <ShoppingCart/> */}
+     <ShoppingCart/>
      <Carousel/>
     </main>
   )
