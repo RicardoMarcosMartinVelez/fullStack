@@ -5,7 +5,7 @@ import { TYPES } from "@/Actions/ShoppingActions";
 
 
 
-const Modal = ({isVisible, onClose, addToCart, id}) => {
+const Modal = ({isVisible, onClose, addToCart, id, detalles, image}) => {
     if (!isVisible) { return null;
         
     }
@@ -20,9 +20,10 @@ const Modal = ({isVisible, onClose, addToCart, id}) => {
     backdrop-blur-sm flex justify-center items-center'>
         <div className='w-[600px] flex flex-col'>
             <button className='text-white text-xl place-self-end'onClick={() => onClose()}>X</button>
-        <div className='bg-orange-400 p-2 rounded'> 
-     
-            <button onClick={() => confirmAdd(id)}>Agregar al Carrito</button>
+        <div className='bg-orange-400 p-5 flex rounded'> 
+        <Image src ={image} width ="250" height="250"/>
+        <p>{detalles}</p>
+         <button className='text-white bg-green-500 hover:bg-green-600 focus:outline-none font-medium text-sm rounded-lg px-5 py-2.5 text-center mr-5'onClick={() => confirmAdd(id)}>Agregar al Carrito</button>
         </div>
         </div>
         </div>

@@ -51,7 +51,7 @@ const ShoppingCart = () => {
       }
 
     </div>
-    <button className= 'text-white bg-green-600 hover:bg-green-800 focus:outline-none font-medium text-sm rounded-lg px-5 py-2.5 text-center mr-5' onClick={resetCart}>Limpiar Carrito</button>
+    <button className= 'text-white bg-green-500 hover:bg-green-600 focus:outline-none font-medium text-sm rounded-lg px-5 py-2.5 text-center mr-5' onClick={resetCart}>Limpiar Carrito</button>
   </div>
   
   </>
