@@ -1,7 +1,8 @@
 
 
 import { TYPES } from '@/Actions/ShoppingActions'
-import { useReducer } from 'react'
+import axios from "axios";
+import { useReducer, useEffect } from 'react'
 import { ShoppingReducer, MenuInitialState } from '@/Reducer/ShoppingReducer'
 import Product from './Product'
 import CartItem from './CartItem'
@@ -12,8 +13,37 @@ const ShoppingCart = () => {
   
 
   const [state, dispatch] = useReducer(ShoppingReducer, MenuInitialState)
-  
+
   const {products, cart} = state;
+
+  const updateState = async () => {
+    const ENDPOINTS = {
+      products: "http://localhost:4000/products",
+      cart: "http://localhost:4000/cart"
+    }
+    const responseProducts = await axios.get(ENDPOINTS.products),
+     responseCart = await axios.get(ENDPOINTS.cart);
+
+    const productsList = responseProducts.data,
+     cartItems = responseCart.data;
+
+     const data = {
+      products: productsList,
+      cart: cartItems
+     }
+
+     dispatch({type: TYPES.READ_STATE, payload: data})
+  }
+
+  useEffect(() => {
+    updateState()
+    
+  }, [])
+   
+ 
+  
+
+ 
 
   const addToCart = (id) => dispatch({type: TYPES.ADD_TO_CART, payload: id})
 
@@ -36,7 +66,7 @@ const ShoppingCart = () => {
    <>
    <h2>Menu</h2>
    <h3>Productos</h3>
-   <div className="menu grid grid-cols-2 content-around ">
+   <div className="menu grid grid-cols-3 content-around ">
     {
         products.map(product => <Product key={product.id} data={product} addToCart = {addToCart}/>)
 

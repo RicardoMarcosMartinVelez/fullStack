@@ -6,13 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fakedb": "json-server --port 4000 --watch src/assets/db.json "
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "autoprefixer": "10.4.15",
+    "axios": "^1.5.0",
+    "json-server": "^0.17.3",
     "next": "13.4.19",
     "postcss": "8.4.28",
     "react": "18.2.0",
