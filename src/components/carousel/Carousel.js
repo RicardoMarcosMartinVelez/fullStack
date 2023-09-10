@@ -39,7 +39,7 @@ const CarouseL = () => {
     return (
         <section className="pt-20 pb-20 w-full  ">
 
-            <Carousel className="w-[60%] min-w-[400px] m-auto " infiniteLoop showThumbs={false} interval={5000} transitionTime={500} showStatus={false}>
+            <Carousel className="w-[60%] min-w-[400px] m-auto " infiniteLoop showThumbs={false} autoPlay interval={5000} transitionTime={500} showStatus={false}>
                 {items.map(ele =>
                     <div key={ele.id} className=" relative h-[450px] rounded-2xl shadow-lg">
                         <img className=" h-[100%] object-cover " src={ele.image}></img>
