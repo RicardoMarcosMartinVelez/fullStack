@@ -11,7 +11,7 @@ export default function Home() {
     <main className='bg-white min-h-screen '>
       
       <Carousel />
-      <ShoppingCart />
+      {/* <ShoppingCart /> */}
 
     </main>
   )

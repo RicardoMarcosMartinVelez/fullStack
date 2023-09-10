@@ -1,87 +1,58 @@
 
-import { useState } from "react"
-import CarouselControls from "./CarouseControls"
-import CarouselDots from "./CarouselDots"
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 
 const items = [{
     id: 1,
     image: "https://imagenes.elpais.com/resizer/xOE7Oeshes4HMCo0BjguULLDLdA=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/4UZ7YMWXB5VGX2IEDT4VCLK7KU.jpg",
     text: "enlace 1",
+    description: "descripcion"
 
 }, {
     id: 2,
     image: "https://img.freepik.com/fotos-premium/hermosa-cordillera-refleja-ia-generativa-aguas-tranquilas_188544-9117.jpg",
-    text: "enlace, descripcion 2",
-
+    text: "enlace 2",
+    description: "descripcion 2"
 }, {
     id: 3,
     image: "https://fondosmil.com/fondo/17009.jpg",
-    text: "enlace, descripcion 3",
-
+    text: "enlace 3",
+    description: "descripcion 3"
 }, {
     id: 4,
     image: "https://wallpaperaccess.com/full/13190.jpg",
-    text: "enlace, descripcion 4",
-
+    text: "enlace 4",
+    description: "descripcion 4"
 }, {
     id: 5,
     image: "https://phototravel.es/wp-content/uploads/viajar-etiopia.jpg",
-    text: "enlace, descripcion 5",
-
+    text: "enlace 5",
+    description: "descripcion 5"
 }]
 
-const Carousel = () => {
+const CarouseL = () => {
 
 
-    const [activeIndex, setActiveIndex] = useState(2)
 
-    //Funciones manejadoras
-
-    const handleNext = () => {
-
-        setActiveIndex(activeIndex < items.length - 1 ? activeIndex + 1 : 0);
-
-    }
-    const handlePrev = () => {
-
-        setActiveIndex(activeIndex > 0 ? activeIndex - 1 : items.length - 1)
-
-    }
-
-    const goToItem = (e) => setActiveIndex(e)
 
     return (
-        <section className="pt-20 pb-20 w-full ">
-            <div className=" h-[400px] w-full">
+        <section className="pt-20 pb-20 w-full  ">
 
-                <div style={{
-                    background: `url(${items[activeIndex].image}) no-repeat 80% center/cover`,
-                }}
-                    className="flex justify-between bg-black h-full w-[90%] sm:w-[80%] xl:w-[70%] 2xl:w-[60%] items-center duration-300 relative m-auto rounded-lg overflow-auto">
+            <Carousel className="w-[60%] min-w-[400px] m-auto " infiniteLoop showThumbs={false} interval={5000} transitionTime={500} showStatus={false}>
+                {items.map(ele =>
+                    <div key={ele.id} className=" relative h-[450px] rounded-2xl shadow-lg">
+                        <img className=" h-[100%] object-cover " src={ele.image}></img>
+                        <div className="w-full h-[15%] bg-black/10 flex justify-start hover:bg-black/40 bottom-0  absolute">
+                            <a className="text-white pl-9 text-xl" href={ele.text}>{ele.text}</a>
+                        </div>
 
-                    <div className="bg-transparent hover:bg-black/50 absolute bottom-0 pl-[10%] w-full pb-7">
-                        <a href="" className=" text-xl text-slate-100">{items[activeIndex].text}</a>
-                    </div>
+                    </div>)}
 
-                    <CarouselControls
-                        next={handleNext}
-                        prev={handlePrev} />
-
-                </div>
-
-                <>
-                    <CarouselDots
-                        activeIndex={activeIndex}
-                        data={items}
-                        goToItem={goToItem} />
-                </>
-
-            </div>
+            </Carousel>
 
         </section>
-
     )
 }
 
-export default Carousel
+export default CarouseL
