@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import ShoppingCart from '@/components/SoppingCart/ShoppingCart'
 import Carousel from '@/components/carousel/Carousel'
+import Footer from '@/components/footer/Footer'
 
 import { useReducer } from 'react'
 
@@ -12,7 +13,7 @@ export default function Home() {
       
       <Carousel />
       <ShoppingCart />
-
+      <Footer />
     </main>
   )
 }
