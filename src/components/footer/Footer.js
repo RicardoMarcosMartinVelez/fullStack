@@ -1,12 +1,12 @@
 const Footer = () => {
     return (
         <div
-            class="bg-neutral-100 text-center text-neutral-600 dark:bg-amber-600 dark:text-neutral-200 lg:text-left">
+            class="bg-amber-600 text-center text-neutral-200 dark:bg-slate-900 dark:text-neutral-200 lg:text-left">
             <div
                 class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-center">
                 {/*  Social network icons container */}
                 <div class="flex justify-center">
-                <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+                <a href="#!" class="mr-6 text-neutral-200 dark:text-neutral-200">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-4 w-4"
@@ -16,7 +16,7 @@ const Footer = () => {
                         d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                     </svg>
                 </a>
-                <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+                <a href="#!" class="mr-6 text-neutral-200 dark:text-neutral-200">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-4 w-4"
@@ -26,7 +26,7 @@ const Footer = () => {
                         d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                     </svg>
                 </a>
-                <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+                <a href="#!" class="mr-6 text-neutral-200 dark:text-neutral-200">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-4 w-4"
@@ -39,71 +39,66 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/*<!-- Main container div: holds the entire content of the footer, including four sections (Tailwind Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->*/}
+            {/* Main container div */}
             <div class="mx-6 py-10 text-center md:text-left">
                 <div class="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                {/*<!-- Tailwind Elements section -->*/}
-                <div class="">
-                    <h6
-                    class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
-                    Code.Foods
-                    </h6>
-                    <p>
-                    En Code.Foods estamos comprometidos a brindar la mejorar calidad
-                    en nuestros productos. La prioridad es las felicidad de nuestros clientes
-                    </p>
-                </div>
-                {/*<!-- Products section -->*/}
-                <div class="">
-                    <h6
-                    class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                    Navegación
-                    </h6>
-                    <p class="mb-4">
-                    <a href="#!" class="text-neutral-600 dark:text-neutral-200"
-                        >Inicio</a
-                    >
-                    </p>
-                    <p class="mb-4">
-                    <a href="#!" class="text-neutral-600 dark:text-neutral-200"
-                        >Nosotros</a
-                    >
-                    </p>
-                    <p class="mb-4">
-                    <a href="#!" class="text-neutral-600 dark:text-neutral-200"
-                        >Productos</a
-                    >
-                    </p>
-                    <p>
-                    <a href="#!" class="text-neutral-600 dark:text-neutral-200"
-                        >Contacto</a
-                    >
-                    </p>
-                </div>
-                {/*<!-- Useful links section -->*/}
-                <div class="">
-                    <h6
-                    class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                    Aplicaciones
-                    </h6>
-                    <p class="mb-4">
-                    <a href="#!" class="text-neutral-600 dark:text-neutral-200"
-                        >PedidosYa</a
-                    >
-                    </p>
-                    <p class="mb-4">
-                    <a href="#!" class="text-neutral-600 dark:text-neutral-200"
-                        >Rappi</a
-                    >
-                    </p>
-                    <p class="mb-4">
-                    <a href="#!" class="text-neutral-600 dark:text-neutral-200"
-                        >Mercado Delivery</a
-                    >
-                    </p>
-                </div>
-                {/*<!-- Contact section -->*/}
-                <div>
+                {/* Tailwind Elements section */}
+                    <div class="">
+                        <h6
+                        class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
+                        Code.Foods
+                        </h6>
+                        <p>
+                        En Code.Foods estamos comprometidos a brindar la mejorar calidad
+                        en nuestros productos. La prioridad es las felicidad de nuestros clientes
+                        </p>
+                    </div>
+                    {/* Section Navegación */}
+                    <div class="">
+                        <h6
+                        class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                        Navegación
+                        </h6>
+                        <p class="mb-4">
+                        <a href="#!" class="text-neutral-200 dark:text-neutral-200"
+                            >Inicio</a
+                        >
+                        </p>
+                        <p class="mb-4">
+                        <a href="#!" class="text-neutral-200 dark:text-neutral-200"
+                            >Nosotros</a
+                        >
+                        </p>
+                        <p class="mb-4">
+                        <a href="#!" class="text-neutral-200 dark:text-neutral-200"
+                            >Productos</a
+                        >
+                        </p>
+                    </div>
+                    {/* Section Aplicaciones*/}
+                    <div class="">
+                        <h6
+                        class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                        Aplicaciones
+                        </h6>
+                        <p class="mb-4">
+                        <a href="#!" class="text-neutral-200 dark:text-neutral-200"
+                            >PedidosYa</a
+                        >
+                        </p>
+                        <p class="mb-4">
+                        <a href="#!" class="text-neutral-200 dark:text-neutral-200"
+                            >Rappi</a
+                        >
+                        </p>
+                        <p class="mb-4">
+                        <a href="#!" class="text-neutral-200 dark:text-neutral-200"
+                            >Mercado Delivery</a
+                        >
+                        </p>
+                    </div>
+                    {/* Contacto section */}
+                    <div>
                     <h6
                     class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
                     Contacto
