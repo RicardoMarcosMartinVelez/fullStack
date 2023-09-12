@@ -9,7 +9,7 @@ export const MenuInitialState = {
 
 
 export function ShoppingReducer(state, action){
-    
+
     switch(action.type){
         case TYPES.READ_STATE:{
             return {
@@ -40,6 +40,7 @@ export function ShoppingReducer(state, action){
             const itemToDelete = state.cart.find(item => item.id === action.payload)
          return itemToDelete.quantity > 1
          ?{
+            
             ...state,
                 cart: state.cart.map(item => item.id === itemToDelete.id
                     ?{...item, quantity : item.quantity - 1}
