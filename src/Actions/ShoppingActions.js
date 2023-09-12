@@ -1,6 +1,7 @@
 
 
 export const TYPES = {
+        READ_STATE : "READ_STATE",
         ADD_TO_CART : "ADD_TO_CART",
         DELETE_ONE_PRODUCT : "DELETE_ONE_PRODUCT",
         DELETE_ALL_PRODUCTS : "DELETE_ALL_PRODUCTS",
