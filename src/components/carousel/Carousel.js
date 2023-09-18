@@ -5,28 +5,28 @@ import { Carousel } from 'react-responsive-carousel';
 
 const items = [{
     id: 1,
-    image: "https://imagenes.elpais.com/resizer/xOE7Oeshes4HMCo0BjguULLDLdA=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/4UZ7YMWXB5VGX2IEDT4VCLK7KU.jpg",
+    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-plancha-queso-cebolla-tomate-generada-ia.jpg",
     text: "enlace 1",
     description: "descripcion"
 
 }, {
     id: 2,
-    image: "https://img.freepik.com/fotos-premium/hermosa-cordillera-refleja-ia-generativa-aguas-tranquilas_188544-9117.jpg",
+    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-queso-gourmet-carne-parrilla-verduras-frescas-generada-ia.jpg",
     text: "enlace 2",
     description: "descripcion 2"
 }, {
     id: 3,
-    image: "https://fondosmil.com/fondo/17009.jpg",
+    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-queso-papas-fritas-ketchup-mesa-madera-ai-generativo%20(2).jpg",
     text: "enlace 3",
     description: "descripcion 3"
 }, {
     id: 4,
-    image: "https://wallpaperaccess.com/full/13190.jpg",
+    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-ternera-parrilla-sobre-mesa-madera-parrilla-generada-ia%20(1).jpg",
     text: "enlace 4",
     description: "descripcion 4"
 }, {
     id: 5,
-    image: "https://phototravel.es/wp-content/uploads/viajar-etiopia.jpg",
+    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-ternera-plancha-patatas-fritas-queso-tomate-ia-generativa%20(1).jpg",
     text: "enlace 5",
     description: "descripcion 5"
 }]
