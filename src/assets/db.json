@@ -87,7 +87,7 @@
     {
       "id": 13,
       "name": "Empanadas de Jamon y Queso",
-      "image": "/images/empanadajamon.jpeg",
+      "image": "/images/empanadajamon.webp",
       "info": "Jamon + queso + huevo + aceitunas + tomates cherry = que DE LI CIA!!",
       "price": 250
     },
@@ -106,7 +106,5 @@
       "price": 350
     }
   ],
-  "cart": [
-    
-  ]
+  "cart": []
 }

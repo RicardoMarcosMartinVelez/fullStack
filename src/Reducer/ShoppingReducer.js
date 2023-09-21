@@ -20,23 +20,24 @@ export function ShoppingReducer(state, action){
         }
         case TYPES.ADD_TO_CART:{
 
-         const newItem = state.products.find(product => product.id === action.payload)   
+            const newItem = state.products.find(product => product.id === action.payload)   
             
-         const itemInCart = state.cart.find(item => item.id === newItem.id)
-
-        return itemInCart
-            ? {
-                ...state,
-                cart: state.cart.map(item => item.id === newItem.id
-                    ? {...item, quantity: item.quantity + 1}
-                    :item
-                    )
-            }
-            : { ...state,
-                cart: [...state.cart, {...newItem, quantity : 1}]}
-         
-        }
+            const itemInCart = state.cart.find(item => item.id === newItem.id)
+   
+           return itemInCart
+               ? {
+                   ...state,
+                   cart: state.cart.map(item => item.id === newItem.id
+                       ? {...item, quantity: item.quantity + 1}
+                       :item
+                       )
+               }
+               : { ...state,
+                   cart: [...state.cart, {...newItem, quantity : 1}]}
+            
+           }
         case TYPES.DELETE_ONE_PRODUCT: {
+
             const itemToDelete = state.cart.find(item => item.id === action.payload)
          return itemToDelete.quantity > 1
          ?{

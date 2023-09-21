@@ -36,58 +36,158 @@ const ShoppingCart = () => {
     updateState();
   }, []);
 
-  
+  const addToCart = async (data) => {
+    const itemIncart = cart.find((item) => item.id === data.id);
 
-  const addToCart = async (product) => {
+    if (!itemIncart) {
+      data.quantity = 1;
+      const ENDPOINT = "http://localhost:4000/cart";
 
-    const ENDPOINT = "http://localhost:4000/cart";
+      const OPTIONS = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        data: JSON.stringify(data),
+      };
 
-    const OPTIONS = {
-      method: "POST",
-      headers: { "content-type": "application/json"},
-      data: JSON.stringify(product),
-    };
-    await axios(ENDPOINT, OPTIONS);
+      await axios(ENDPOINT, OPTIONS);
+    } else {
+      data.quantity = itemIncart.quantity + 1;
+      const ENDPOINT = `http://localhost:4000/cart/${data.id}`;
 
-    dispatch({ type: TYPES.ADD_TO_CART, payload: product.id });
+      const OPTIONS = {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        data: JSON.stringify(data),
+      };
+
+      await axios(ENDPOINT, OPTIONS);
+    }
     updateState();
   };
 
-  const deleteFromCart = (id, all = false) => {
-    if (all) {
-      dispatch({ type: TYPES.DELETE_ALL_PRODUCTS, payload: id });
+  const deleteFromCart = async (data) => {
+    const itemToDelete = cart.find((item) => item.id === data.id);
+    
+    if (itemToDelete.quantity >=2) {
+
+      data.quantity = itemToDelete.quantity - 1
+
+      const ENDPOINT = `http://localhost:4000/cart/${data.id}`;
+  
+      const OPTIONS = {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        data: JSON.stringify(data),
+      };
+
+    await axios(ENDPOINT, OPTIONS);
+  
+
     } else {
-      dispatch({ type: TYPES.DELETE_ONE_PRODUCT, payload: id });
-    }
-  };
-  const resetCart = () => dispatch({ type: TYPES.RESET_CART }, updateState());
+      axios.delete(`http://localhost:4000/cart/${data.id}`)
+    updateState();
+      }
+      
+  }
+  
+const resetCart = async () => {
+
+  const item = cart[cart.length -1]
+
+
+if(cart.length != 0) {
+   await axios.delete(`http://localhost:4000/cart/${item.id}`) 
+   updateState();}
+   else{
+    resetCart()
+   }
+ 
+
+
+}
+     
+
+
 
   return (
     <>
-      <h2><b>Menu</b></h2>
-      <h3><b>Productos</b></h3>
-      <div className="menu grid grid-cols-3 content-around ">
+      <h2>
+        <b>Menu</b>
+      </h2>
+      <h3>
+        <b>Productos</b>
+      </h3>
+      <div className={styles.boxStyle}>
         {products.map((product) => (
-          <Product key={product.id} data={product} addToCart={addToCart} />
+          <Product
+            key={product.id}
+            data={product}
+            addToCart={addToCart}
+            styles={styles}
+          />
         ))}
       </div>
-      <div className=" bg-orange-400 shadow-xl text-white m-5 p-3 rounded-lg items-center">
-        <h2><b>Carrito de compras</b></h2>
-        <h3><b>Tu pedido</b></h3>
-        <div className="flex  p-3 m-5 items-center">
+      <div className="bg-black bg-opacity-25 rounded-3xl grid justify-center text-center justify-items-center">
+        <h2>
+          <b>Carrito de compras</b>
+        </h2>
+        <h3>
+          <b>Tu pedido</b>
+        </h3>
+        <div className={styles.boxStyle}>
           {cart.map((item, index) => (
-            <CartItem key={index} item={item} deleteFromCart={deleteFromCart} />
+            <CartItem
+              key={index}
+              data={item}
+              deleteFromCart={deleteFromCart}
+              styles={styles}
+            />
           ))}
         </div>
-        <button
-          className="text-white bg-green-500 hover:bg-green-600 focus:outline-none font-medium text-sm rounded-lg px-5 py-2.5 text-center mr-5"
-          onClick={resetCart}
-        >
+        <button className={styles.buttonStyle} onClick={resetCart}>
           Limpiar Carrito
         </button>
       </div>
     </>
-  );
-};
+  );}
 
 export default ShoppingCart;
+
+const styles = {
+buttonStyle : `bg-black
+text-withe 
+border-2 
+border-white 
+opacity-60 
+hover:bg-orange-300 
+hover:text-black 
+focus:outline-none 
+font-medium 
+text-sm 
+rounded-lg 
+px-5 
+py-2.5 
+text-center mr-5`,
+
+cardStyle :
+`bg-black 
+bg-opacity-30
+border-1 
+border-withe 
+shadow-2xl 
+rounded-lg 
+text-white
+grid
+content-around 
+justify-center
+justify-items-center
+m-10 p-3 
+hover:border-2 
+hover:bg-grey-100`,
+
+boxStyle:`
+grid
+content-around
+sm:grid-cols-1 
+md:grid-cols-3 
+lg:grid-cols-5`}
