@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <div
-            class="bg-orange-400 text-center text-neutral-200 dark:bg-slate-900 dark:text-neutral-200 lg:text-left">
+            class="bg-orange-400 text-center text-neutral-200 dark:bg-orange-900 dark:text-neutral-200 lg:text-left">
             <div
                 class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-center">
                 {/*  Social network icons container */}
