@@ -11,7 +11,7 @@ const ShoppingCart = () => {
 
   const { products, cart } = state;
 
-  // solicitud de datos a db.json
+  // solicitud de datos a db.json mediante async/away
 
   const updateState = async () => {
     const ENDPOINTS = {
@@ -35,6 +35,8 @@ const ShoppingCart = () => {
   useEffect(() => {
     updateState();
   }, []);
+
+  //solicitudes http mediante los buttons del modal
 
   const addToCart = async (data) => {
     const itemIncart = cart.find((item) => item.id === data.id);
@@ -65,49 +67,48 @@ const ShoppingCart = () => {
     updateState();
   };
 
+  //solicitudes mediante buttons de los CardItems
+
   const deleteFromCart = async (data) => {
     const itemToDelete = cart.find((item) => item.id === data.id);
-    
-    if (itemToDelete.quantity >=2) {
 
-      data.quantity = itemToDelete.quantity - 1
+    if (itemToDelete.quantity >= 2) {
+      data.quantity = itemToDelete.quantity - 1;
 
       const ENDPOINT = `http://localhost:4000/cart/${data.id}`;
-  
+
       const OPTIONS = {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         data: JSON.stringify(data),
       };
 
-    await axios(ENDPOINT, OPTIONS);
-  
-
+      await axios(ENDPOINT, OPTIONS);
+      updateState();
     } else {
-      axios.delete(`http://localhost:4000/cart/${data.id}`)
+      axios.delete(`http://localhost:4000/cart/${data.id}`);
+      updateState();
+    }
+  };
+
+  const deleteAll = async (data) => {
+    const itemToDelete = cart.find((item) => item.id === data.id);
+
+    axios.delete(`http://localhost:4000/cart/${data.id}`);
     updateState();
-      }
-      
-  }
-  
-const resetCart = async () => {
+  };
 
-  const item = cart[cart.length -1]
+  //solicitud resetCart en el shoppingCart
 
+  const resetCart = () => {
+    const item = cart[cart.length - 1];
 
-if(cart.length != 0) {
-   await axios.delete(`http://localhost:4000/cart/${item.id}`) 
-   updateState();}
-   else{
-    resetCart()
-   }
- 
+    cart.forEach((item) => {
+      axios.delete(`http://localhost:4000/cart/${item.id}`);
+    });
 
-
-}
-     
-
-
+    updateState();
+  };
 
   return (
     <>
@@ -140,6 +141,7 @@ if(cart.length != 0) {
               key={index}
               data={item}
               deleteFromCart={deleteFromCart}
+              deleteAll={deleteAll}
               styles={styles}
             />
           ))}
@@ -149,12 +151,13 @@ if(cart.length != 0) {
         </button>
       </div>
     </>
-  );}
+  );
+};
 
 export default ShoppingCart;
 
 const styles = {
-buttonStyle : `bg-black
+  buttonStyle: `bg-black
 text-withe 
 border-2 
 border-white 
@@ -169,8 +172,7 @@ px-5
 py-2.5 
 text-center mr-5`,
 
-cardStyle :
-`bg-black 
+  cardStyle: `bg-black 
 bg-opacity-30
 border-1 
 border-withe 
@@ -185,9 +187,10 @@ m-10 p-3
 hover:border-2 
 hover:bg-grey-100`,
 
-boxStyle:`
+  boxStyle: `
 grid
 content-around
 sm:grid-cols-1 
 md:grid-cols-3 
-lg:grid-cols-5`}
+lg:grid-cols-5`,
+};
