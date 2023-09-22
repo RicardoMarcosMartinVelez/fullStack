@@ -1,16 +1,31 @@
+import { data } from "autoprefixer";
+import Image from "next/image";
 
-
-const CartItem = ({item, deleteFromCart}) => {
-const {name, price, id, image, quantity}= item;
-
-    return(
-        <figure className="cart-item bg-orange-400 border-#362435 m-3 shadow-xl rounded-md text-black">
-            <img src={image}/>
-            <h4>{name}</h4>
-            <h5>$ {price} X {quantity} = {price * quantity}</h5>
-            <button onClick={() => deleteFromCart(id)}>Eliminar uno </button>
-            <button onClick={() => deleteFromCart(id, true)}>Eliminar todos </button>
-        </figure>
-    )
-}
+const CartItem = ({ data, deleteFromCart, deleteAll, styles }) => {
+  const { name, price, id, image, quantity } = data;
+  const { buttonStyle, cardStyle } = styles;
+  return (
+    <figure className={cardStyle}>
+      <Image
+        className="border-2 border-orange-300"
+        src={image}
+        alt={name}
+        width="250"
+        height="200"
+      />
+      <h4>
+        <b>{name}</b>
+      </h4>
+      <h5>
+        $ {price} X {quantity} = {price * quantity}
+      </h5>
+      <button className={buttonStyle} onClick={() => deleteFromCart(data)}>
+        Eliminar uno{" "}
+      </button>
+      <button className={buttonStyle} onClick={() => deleteAll(data)}>
+        Eliminar todos{" "}
+      </button>
+    </figure>
+  );
+};
 export default CartItem;

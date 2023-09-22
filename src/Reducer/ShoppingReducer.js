@@ -1,7 +1,7 @@
 import { TYPES } from "@/Actions/ShoppingActions";
 
-
 export const MenuInitialState = {
+<<<<<<< HEAD
     products: [],
     cart: [],
 };
@@ -64,5 +64,23 @@ export function ShoppingReducer(state, action){
         }
         default :
             return state;
+=======
+  products: [],
+  cart: [],
+};
+
+export function ShoppingReducer(state, action) {
+  switch (action.type) {
+    case TYPES.READ_STATE: {
+      return {
+        ...state,
+        products: action.payload.products,
+        cart: action.payload.cart,
+      };
+>>>>>>> shoppingcart
     }
+
+    default:
+      return state;
+  }
 }
