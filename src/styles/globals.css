@@ -11,8 +11,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 94, 94, 94;
   }
 }
 
@@ -99,7 +99,7 @@
   }
   
   .light {
-    background-color: #ffffff; /* Light background color */
+    background-color: #fb923c; /* Light background color */
     color: #000000; /* Light text color */
     display: flex;
     flex-direction: column;
@@ -107,7 +107,7 @@
   }
   
   .obscure {
-    background-color: #000000; /* Obscure background color */
+    background-color: #7c2d12; /* Obscure background color */
     color: #ffffff; /* Obscure text color */
     display: flex;
     flex-direction: column;

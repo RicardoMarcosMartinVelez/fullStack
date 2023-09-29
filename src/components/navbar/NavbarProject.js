@@ -22,7 +22,7 @@ function NavbarProject() {
     <nav className={theme}> {/* Theme as a class name */}
     
       <div className={`nav-container ${menuOpen ? 'active' : ''}`}>
-         <img src="./image/codeburger-logo.png" alt="Photo"/>
+         <img src="\images\codeburger-logo.png" alt="Photo"/>
       
         <div className="nav-toggle" onClick={toggleMenu}>
           <div className="bar"></div>
@@ -33,7 +33,7 @@ function NavbarProject() {
           <li>
             <a
               className="nav-link"
-              href="HTML/home.html"
+              href="http://localhost:3000/"
               target="_blank"
               rel="noopener"
               onClick={closeMenu}
@@ -53,10 +53,6 @@ function NavbarProject() {
           </li>
           {/* Add more navigation items as needed */}
         </ul>
-        <div className="left-buttons"> {/* Container for left buttons */}
-          <button id="darkButton" onClick={toggleTheme}>Dark</button> 
-          <button id="lightButton" onClick={toggleTheme}>Light</button>
-        </div>
       </div>
     </nav>
   );
