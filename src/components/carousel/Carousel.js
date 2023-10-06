@@ -5,17 +5,11 @@ import { Carousel } from 'react-responsive-carousel';
 
 const items = [{
     id: 1,
-<<<<<<< HEAD
     image: "/images/carrousel/car_img1.png",
-=======
-    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-plancha-queso-cebolla-tomate-generada-ia.jpg",
-    text: "enlace 1",
->>>>>>> 371194d799c05d7d9d3dfa5e1f70f570f4cb7f5d
     description: "descripcion"
 
 }, {
     id: 2,
-<<<<<<< HEAD
     image: "/images/carrousel/car_img2.png",
     description: "descripcion 2"
 }, {
@@ -29,25 +23,6 @@ const items = [{
 }, {
     id: 5,
     image: "/images/carrousel/car_img5.png",
-=======
-    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-queso-gourmet-carne-parrilla-verduras-frescas-generada-ia.jpg",
-    text: "enlace 2",
-    description: "descripcion 2"
-}, {
-    id: 3,
-    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-queso-papas-fritas-ketchup-mesa-madera-ai-generativo%20(2).jpg",
-    text: "enlace 3",
-    description: "descripcion 3"
-}, {
-    id: 4,
-    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-ternera-parrilla-sobre-mesa-madera-parrilla-generada-ia%20(1).jpg",
-    text: "enlace 4",
-    description: "descripcion 4"
-}, {
-    id: 5,
-    image: "https://github.com/RicardoMarcosMartinVelez/fullStack/blob/main/public/image/hamburguesa-ternera-plancha-patatas-fritas-queso-tomate-ia-generativa%20(1).jpg",
-    text: "enlace 5",
->>>>>>> 371194d799c05d7d9d3dfa5e1f70f570f4cb7f5d
     description: "descripcion 5"
 }]
 
