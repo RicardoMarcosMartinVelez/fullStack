@@ -21,7 +21,7 @@ function NavbarProject() {
   return (
     <nav className={theme}> {/* Theme as a class name */}
     
-      <div className={`nav-container ${menuOpen ? 'active' : ''}`}>
+      <div className={`nav-container bg-orange-400 dark:bg-orange-900 ${menuOpen ? 'active' : ''}`}>
          <img src="\images\codeburger-logo.png" alt="Photo"/>
       
         <div className="nav-toggle" onClick={toggleMenu}>
@@ -38,17 +38,17 @@ function NavbarProject() {
               rel="noopener"
               onClick={closeMenu}
             >
-              Home
+              Inicio
             </a>
           </li>
           <li>
-            <a className="nav-link" href="#about" onClick={closeMenu}>
-              Products
+            <a className="nav-link" href="#cart" onClick={closeMenu}>
+              Productos
             </a>
           </li>
           <li>
-            <a className="nav-link" href="#bingo" onClick={closeMenu}>
-              Contact
+            <a className="nav-link" href="#footer" onClick={closeMenu}>
+              Nosotros
             </a>
           </li>
           {/* Add more navigation items as needed */}

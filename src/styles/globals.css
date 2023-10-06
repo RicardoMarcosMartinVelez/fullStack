@@ -3,17 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 255, 255, 255;
-    --background-end-rgb: 94, 94, 94;
-  }
+  background-color: rgb(217,50,50);
+  background-color: linear-gradient(0deg, rgba(217,50,50,1) 0%, rgba(164,137,80,1) 50%, rgba(32,103,62,1) 100%);
 }
 
 /* NavBar Style  */
@@ -21,7 +12,7 @@
 .nav { flex-direction: column-reverse;
   display: flex;
   background-color: rgb(42, 47, 51); 
-  position: sticky; top: 0;}
+}
   
   
   
@@ -34,7 +25,10 @@
     margin: 0 auto;
     padding: 0 20px;
     height: 70px;
-  
+    position: fixed;
+    top: 0;  
+    background-color: #fb923c;
+    z-index: 9999;
   }
   
   .nav-container img {
@@ -77,12 +71,12 @@
   
   .nav-link {
     text-decoration: none;
-    color: gray;
+    color: rgb(255, 255, 255);
     transition: color 0.3s ease;
   }
   
   .nav-link:hover {
-    color: rgb(188, 218, 245); /* Change the color on hover */
+    color: rgb(20, 97, 168); /* Change the color on hover */
     transform: scale(110%);
   }
   

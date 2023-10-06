@@ -112,10 +112,10 @@ const ShoppingCart = () => {
 
   return (
     <>
-      <h2>
+      <h2 className='text-center'>
         <b>Menu</b>
       </h2>
-      <h3>
+      <h3 className='text-center'>
         <b>Productos</b>
       </h3>
       <div className={styles.boxStyle}>
@@ -158,10 +158,10 @@ export default ShoppingCart;
 
 const styles = {
   buttonStyle: `bg-black
-text-withe 
+text-white 
 border-2 
 border-white 
-opacity-60 
+opacity-70 
 hover:bg-orange-300 
 hover:text-black 
 focus:outline-none 
@@ -175,7 +175,7 @@ text-center mr-5`,
   cardStyle: `bg-black 
 bg-opacity-30
 border-1 
-border-withe 
+border-white 
 shadow-2xl 
 rounded-lg 
 text-white
@@ -185,7 +185,7 @@ justify-center
 justify-items-center
 m-10 p-3 
 hover:border-2 
-hover:bg-grey-100`,
+hover:bg-grey-400`,
 
   boxStyle: `
 grid

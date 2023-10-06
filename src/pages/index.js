@@ -11,12 +11,16 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className='bg-white min-h-screen '>
+    <main className='bg-gradient-to-t from-gray-100 to-gray-400 min-h-screen' id="homepage">
       <NavbarProject />
       <Header />
       <Carousel />
+      <div id="cart">
       <ShoppingCart />
+      </div>
+      <div id="footer">
       <Footer />
+      </div>
     </main>
   )
 }
