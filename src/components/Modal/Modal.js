@@ -26,7 +26,7 @@ const Modal = ({ isVisible, onClose, addToCart, data, styles }) => {
   {
     return (
       <div
-        className="fixed inset-0 bg-black bg-opacity-25 
+        className="fixed z-[100] inset-0 bg-black bg-opacity-25 
     backdrop-blur-sm flex justify-center items-center"
       >
         <div className="w-[400px] flex flex-col">

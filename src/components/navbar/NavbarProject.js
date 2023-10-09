@@ -47,7 +47,7 @@ function NavbarProject() {
             </a>
           </li>
           <li>
-            <a className="nav-link" href="#footer" onClick={closeMenu}>
+            <a className="nav-link" href="#aboutus" onClick={closeMenu}>
               Nosotros
             </a>
           </li>

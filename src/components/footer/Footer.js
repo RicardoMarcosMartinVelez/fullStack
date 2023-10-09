@@ -70,7 +70,7 @@ const Footer = () => {
                         >
                         </p>
                         <p class="mb-4">
-                        <a href="#footer" class="text-neutral-200 dark:text-neutral-200"
+                        <a href="#aboutus" class="text-neutral-200 dark:text-neutral-200"
                             >Nosotros</a
                         >
                         </p>

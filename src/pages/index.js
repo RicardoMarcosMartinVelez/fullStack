@@ -3,9 +3,11 @@ import NavbarProject from '@/components/navbar/NavbarProject'
 import Header from '@/components/header/Header'
 import ShoppingCart from '@/components/SoppingCart/ShoppingCart'
 import Carousel from '@/components/carousel/Carousel'
+import About_us from '@/components/about/About_us'
 import Footer from '@/components/footer/Footer'
 
 import { useReducer } from 'react'
+import About_us from '@/components/about/About_us'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +19,9 @@ export default function Home() {
       <Carousel />
       <div id="cart">
       <ShoppingCart />
+      </div>
+      <div id="aboutus">
+      <About_us />
       </div>
       <div id="footer">
       <Footer />
