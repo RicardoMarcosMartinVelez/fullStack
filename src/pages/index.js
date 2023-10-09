@@ -7,7 +7,6 @@ import About_us from '@/components/about/About_us'
 import Footer from '@/components/footer/Footer'
 
 import { useReducer } from 'react'
-import About_us from '@/components/about/About_us'
 
 const inter = Inter({ subsets: ['latin'] })
 
