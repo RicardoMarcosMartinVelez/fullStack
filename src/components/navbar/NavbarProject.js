@@ -12,11 +12,6 @@ function NavbarProject() {
     setMenuOpen(false);
   };
 
-  const toggleTheme = () => {
-    // Toggle the theme between 'light' and 'obscure'
-    const newTheme = theme === 'light' ? 'obscure' : 'light';
-    setTheme(newTheme);
-  };
 
   return (
     <nav className={theme}> {/* Theme as a class name */}
@@ -51,7 +46,6 @@ function NavbarProject() {
               Nosotros
             </a>
           </li>
-          {/* Add more navigation items as needed */}
         </ul>
       </div>
     </nav>

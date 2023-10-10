@@ -9,7 +9,7 @@ const Footer = () => {
             class="bg-orange-400 text-center text-neutral-200 dark:bg-orange-900 dark:text-neutral-200 lg:text-left">
             <div
                 class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-center">
-                {/*  Social network icons container */}
+                {/*  Section Social Network Icons */}
                 <div class="flex justify-center">
                 <a href="https://www.facebook.com/" target="_blank" class="mr-6 text-neutral-200 dark:text-neutral-200">
                     <svg
@@ -102,7 +102,7 @@ const Footer = () => {
                         >
                         </p>
                     </div>
-                    {/* Contacto section */}
+                    {/* Section Contacto */}
                     <div>
                     <h6
                     class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
