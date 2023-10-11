@@ -15,7 +15,6 @@ export default function Home() {
     <main className='bg-gradient-to-t from-gray-100 to-gray-400 min-h-screen' id="homepage">
       <ShoppingContextProvider>
       <NavbarProject />
-      </ShoppingContextProvider>
       <Header />
       <Carousel />
       <div id="cart">
@@ -27,6 +26,7 @@ export default function Home() {
       <div id="footer">
       <Footer />
       </div>
+      </ShoppingContextProvider>
     </main>
   )
 }
