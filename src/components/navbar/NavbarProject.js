@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CartIcon from '../CartIcon';
 
 function NavbarProject() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,6 +25,9 @@ function NavbarProject() {
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
+          <a className="nav-link" href="#cart" onClick={closeMenu}>
+          <CartIcon />
+          </a>
         <ul className="nav-links">
           <li>
             <a
