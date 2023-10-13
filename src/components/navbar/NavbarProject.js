@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import CartIcon from '../CartIcon';
+
 
 function NavbarProject() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,47 +14,54 @@ function NavbarProject() {
     setMenuOpen(false);
   };
 
+  const toggleTheme = () => {
+    // Toggle the theme between 'light' and 'obscure'
+    const newTheme = theme === 'light' ? 'obscure' : 'light';
+    setTheme(newTheme);
+  };
 
   return (
     <nav className={theme}> {/* Theme as a class name */}
     
-      <div className={`nav-container bg-orange-400 dark:bg-orange-900 ${menuOpen ? 'active' : ''}`}>
-         <img src="\images\codeburger-logo.png" alt="Photo"/>
+      <div className={`nav-container ${menuOpen ? 'active' : ''}`}>
+         <img src="./image/codeburger-logo.png" alt="Photo"/>
       
         <div className="nav-toggle" onClick={toggleMenu}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
-          <a className="nav-link" href="#cart" onClick={closeMenu}>
-          <CartIcon />
-          </a>
         <ul className="nav-links">
           <li>
             <a
               className="nav-link"
-              href="http://localhost:3000/"
+              href="HTML/home.html"
               target="_blank"
               rel="noopener"
               onClick={closeMenu}
             >
-              Inicio
+              Home
             </a>
           </li>
           <li>
-            <a className="nav-link" href="#cart" onClick={closeMenu}>
-              Productos
+            <a className="nav-link" href="#about" onClick={closeMenu}>
+              Products
             </a>
           </li>
           <li>
-            <a className="nav-link" href="#aboutus" onClick={closeMenu}>
-              Nosotros
+            <a className="nav-link" href="#bingo" onClick={closeMenu}>
+              Contact
             </a>
           </li>
+          {/* Add more navigation items as needed */}
         </ul>
+        <div className="left-buttons"> {/* Container for left buttons */}
+          <button id="darkButton" onClick={toggleTheme}>Dark</button> 
+          <button id="lightButton" onClick={toggleTheme}>Light</button>
+        </div>
       </div>
     </nav>
   );
 }
 
-export default NavbarProject;
+export default NavbarProject;

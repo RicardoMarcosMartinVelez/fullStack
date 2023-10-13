@@ -5,6 +5,7 @@ import { ShoppingReducer, MenuInitialState } from "@/Reducer/ShoppingReducer";
 import Product from "./Product";
 import CartItem from "./CartItem";
 import { data } from "autoprefixer";
+import CartIcon from "../CartIcon";
 
 const ShoppingCart = () => {
   const [state, dispatch] = useReducer(ShoppingReducer, MenuInitialState);
@@ -112,6 +113,10 @@ const ShoppingCart = () => {
 
   return (
     <>
+    <div>
+    <a className="fixed  bottom-12 right-5" href="#cart">
+    <CartIcon />
+      </a>
       <h2 className='text-center'>
         <b>Menu</b>
       </h2>
@@ -135,7 +140,7 @@ const ShoppingCart = () => {
         <h3>
           <b>Tu pedido</b>
         </h3>
-        <div className={styles.boxStyle}>
+        <div  id="cart" className={styles.boxStyle}>
           {cart.map((item, index) => (
             <CartItem
               key={index}
@@ -149,6 +154,7 @@ const ShoppingCart = () => {
         <button className={styles.buttonStyle} onClick={resetCart}>
           Limpiar Carrito
         </button>
+      </div>
       </div>
     </>
   );
