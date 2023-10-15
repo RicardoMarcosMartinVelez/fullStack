@@ -6,6 +6,7 @@ import Product from "./Product";
 import CartItem from "./CartItem";
 import { data } from "autoprefixer";
 import CartIcon from "../CartIcon";
+import ShoppingContextProvider from '@/context/ShoppingContextProvider'
 
 const ShoppingCart = () => {
   const [state, dispatch] = useReducer(ShoppingReducer, MenuInitialState);
@@ -113,8 +114,9 @@ const ShoppingCart = () => {
 
   return (
     <>
+    <ShoppingContextProvider>
     <div>
-    <a className="fixed  bottom-12 right-5" href="#cart">
+    <a className="fixed  bottom-12 right-5" href="#shoppingcart">
     <CartIcon />
       </a>
       <h2 className='text-center'>
@@ -137,10 +139,10 @@ const ShoppingCart = () => {
         <h2>
           <b>Carrito de compras</b>
         </h2>
-        <h3>
+        <h3 id="shoppingcart">
           <b>Tu pedido</b>
         </h3>
-        <div  id="cart" className={styles.boxStyle}>
+        <div  className={styles.boxStyle}>
           {cart.map((item, index) => (
             <CartItem
               key={index}
@@ -156,6 +158,7 @@ const ShoppingCart = () => {
         </button>
       </div>
       </div>
+      </ShoppingContextProvider>
     </>
   );
 };

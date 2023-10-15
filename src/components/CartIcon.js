@@ -17,11 +17,20 @@ const {cart} = state;
 
 let counter = cart.reduce((count, item) => count + item.quantity, 0)
 
-
+function handleClickAnywhere() {
+  updateState()
+ }
 
  useEffect(() => {
-  updateState()
-},[state]);
+  
+  document.addEventListener('click', handleClickAnywhere);
+  
+  return () => {
+    document.removeEventListener('click', handleClickAnywhere);
+  
+  };
+  
+},[]);
   
   
 

@@ -12,6 +12,7 @@ const ShoppingContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(ShoppingReducer, MenuInitialState);
  
     const { products, cart } = state;
+    
 
   // solicitud de datos a db.json mediante async/away
 
@@ -35,12 +36,13 @@ const ShoppingContextProvider = ({children}) => {
   };
 
   useEffect(() => {
+  
     updateState();
   }, []);
 
-   
+  const data = {state, updateState}
   return (
-   <ShoppingContext.Provider value ={state}>
+   <ShoppingContext.Provider value ={data}>
     {children}
    </ShoppingContext.Provider>
   )
