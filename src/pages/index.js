@@ -5,6 +5,7 @@ import ShoppingCart from '@/components/SoppingCart/ShoppingCart'
 import Carousel from '@/components/carousel/Carousel'
 import About_us from '@/components/about/About_us'
 import Footer from '@/components/footer/Footer'
+import ShoppingContextProvider from '@/context/ShoppingContextProvider'
 
 
 
@@ -13,7 +14,6 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className='bg-gradient-to-t from-gray-100 to-gray-400 min-h-screen' id="homepage">
-      <ShoppingContextProvider>
       <NavbarProject />
       <Header />
       <Carousel />
@@ -26,7 +26,6 @@ export default function Home() {
       <div id="footer">
       <Footer />
       </div>
-      </ShoppingContextProvider>
     </main>
   )
 }
