@@ -35,7 +35,7 @@ function handleClickAnywhere() {
   
 
   return (
-    <div className=" flex justify-end mr-3 p-8 z-90">
+    <div className=" flex absolute top-0 right-0 h-16 w-16 z-90">
         <p className="bg-red-600 flex z-40 pb-0.5 pl-1 items-center absolute text-white text-s font-bold
          rounded-full w-[20px] h-[20px]">{counter}</p>
        <Image className="z-39 absolute border-2 border-red-700 rounded-full p-1"

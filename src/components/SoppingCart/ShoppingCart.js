@@ -116,7 +116,7 @@ const ShoppingCart = () => {
     <>
     <ShoppingContextProvider>
     <div>
-    <a className="fixed z-[900]  bottom-12 right-5" href="#shoppingcart">
+    <a className="fixed z-[900] top-3 right-0 h-16 w-16" href="#shoppingcart">
     <CartIcon />
       </a>
       <h2 className='text-center'>
