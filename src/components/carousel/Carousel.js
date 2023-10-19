@@ -1,53 +1,71 @@
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-
-
-const items = [{
-    id: 1,
-    image: "/images/carrousel/car_img1.png",
-    description: "descripcion"
-
-}, {
-    id: 2,
-    image: "/images/carrousel/car_img2.png",
-    description: "descripcion 2"
-}, {
-    id: 3,
-    image: "/images/carrousel/car_img3.png",
-    description: "descripcion 3"
-}, {
-    id: 4,
-    image: "/images/carrousel/car_img4.png",
-    description: "descripcion 4"
-}, {
-    id: 5,
-    image: "/images/carrousel/car_img5.png",
-    description: "descripcion 5"
-}]
-
-const CarouseL = () => {
-
-
-
-
+export default function CarouseL() {
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 1920, min: 1024 },
+          items: 4
+        },
+        desktop: {
+          breakpoint: { max: 1024, min: 768 },
+          items: 4,
+        },
+        tablet: {
+          breakpoint: { max: 768, min: 464 },
+          items: 2,
+        },
+        mobile: {
+          breakpoint: { max: 640, min: 0 },
+          items: 1,
+        }
+      };
     return (
-        <section className="pt-20 pb-20 w-full  ">
+        <div class="owl_carousel">
+            <Carousel 
+            responsive={responsive} 
+            showDots={true}
+            infinite={true}
+            swipeable={false} 
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            autoPlay 
+            autoPlaySpeed={3000}
+            >
+            <div class="mr-2">
+                <img
+                 src="/images/carousel/img1.png">
+                 </img>
+            </div>
+            <div class="mr-2">
+                <img src="/images/carousel/img2.png"></img>
+            </div>
+            <div class="mr-2">
+                <img src="/images/carousel/img3.png"></img>
+            </div>
+            <div class="mr-2">
+                <img src="/images/carousel/img4.png"></img>
+            </div>
+            <div class="mr-2">
+                <img src="/images/carousel/img5.png"></img>
+            </div>
+            <div class="mr-2">
+                <img src="/images/carousel/img6.png"></img>
+            </div>
+            <div class="mr-2">
+                <img src="/images/carousel/img7.png"></img>
+            </div>
+            <div class="mr-2">
+                <img src="/images/carousel/img8.png"></img>
+            </div>
+            <div class="mr-2">
+                <img src="/images/carousel/img9.png"></img>
+            </div>
+            <div class="mr-2">
+                <img src="/images/carousel/img10.png"></img>
+            </div>
+            </Carousel>;
+        </div>
 
-            <Carousel className="w-[60%] min-w-[400px] m-auto " infiniteLoop showThumbs={false} autoPlay interval={5000} transitionTime={500} showStatus={false}>
-                {items.map(ele =>
-                    <div key={ele.id} className=" relative h-[450px] rounded-2xl shadow-lg">
-                        <img className=" h-[100%] w-[100%] object-fit " src={ele.image}></img>
-                        <div className="w-full h-[15%] bg-black/10 flex justify-start hover:bg-black/40 bottom-0  absolute">
-                            <a className="text-white pl-9 text-xl" href={ele.text}>{ele.text}</a>
-                        </div>
-
-                    </div>)}
-
-            </Carousel>
-
-        </section>
     )
 }
-
-export default CarouseL

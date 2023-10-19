@@ -8,115 +8,30 @@
 }
 
 /* NavBar Style  */
-
-.nav { flex-direction: column-reverse;
-  display: flex;
-  background-color: rgb(42, 47, 51); 
-}
-  
-  
   
   .nav-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100vw;
-    margin: 0 auto;
-    padding: 0 20px;
     height: 70px;
-    position: fixed;
-    top: 0;  
-    background-color: #fb923c;
-    z-index: 9999;
   }
-  
+
   .nav-container img {
+    position: absolute;
+    top: 10%;
+    left: 0%;
     height: 50px;
     width: 50px;
-    flex-direction:row ;
-    align-items: left;
   }
   
-  
-  .left-buttons { justify-items: left;
 
-  }
-  
-  
-  .nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    height: 100px;
-  }
-  
-  .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 3px 0;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    margin-right: 20px;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    transition: color 0.3s ease;
-  }
   
   .nav-link:hover {
     color: rgb(20, 97, 168); /* Change the color on hover */
     transform: scale(110%);
   }
   
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .nav-toggle {
-      display: flex;
-    }
-  
-  
-    .nav-links li {
-      margin: 10px 0;
-    }
-  }
-  
-  .light {
-    background-color: #fb923c; /* Light background color */
-    color: #000000; /* Light text color */
-    display: flex;
-    flex-direction: column;
-    /* Add more styles for your light mode here */
-  }
-  
-  .obscure {
-    background-color: #7c2d12; /* Obscure background color */
-    color: #ffffff; /* Obscure text color */
-    display: flex;
-    flex-direction: column;
-    /* Add more styles for your obscure mode here */
-  }
-  .button-box {
-    width: 230px;
-    margin: 10px auto;
-    position: relative;
-    border-radius: 30px;
-    background: black
-      color(white)
-  
-  }
-  
+   
   .toggle-btn {
     padding: 10px 40px;
     cursor: pointer;

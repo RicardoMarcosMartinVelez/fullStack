@@ -106,30 +106,5 @@
       "price": 350
     }
   ],
-  "cart": [
-    {
-      "id": 13,
-      "name": "Empanadas de Jamon y Queso",
-      "image": "/images/shoppingcart/empanadajamon.webp",
-      "info": "Jamon + queso + huevo + aceitunas + tomates cherry = que DE LI CIA!!",
-      "price": 250,
-      "quantity": 1
-    },
-    {
-      "id": 14,
-      "name": "Empanadas capresse",
-      "image": "/images/shoppingcart/empanadacapresse.jpg",
-      "info": "Si no las probaste aun estas a tiempo... albahaca, tomates cherry, muzzarella y aceitunas negras, imperdible",
-      "price": 350,
-      "quantity": 1
-    },
-    {
-      "id": 15,
-      "name": "Empanadas calabresa",
-      "image": "/images/shoppingcart/empanadacalabresa.jpg",
-      "info": "Solo para exigentes, cantimpalo y muzzarella... ",
-      "price": 350,
-      "quantity": 1
-    }
-  ]
+  "cart": []
 }

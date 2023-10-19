@@ -14,53 +14,58 @@ function NavbarProject() {
     setMenuOpen(false);
   };
 
-  const toggleTheme = () => {
-    // Toggle the theme between 'light' and 'obscure'
-    const newTheme = theme === 'light' ? 'obscure' : 'light';
-    setTheme(newTheme);
-  };
 
   return (
-    <nav className={theme}> {/* Theme as a class name */}
-    
-      <div className={`nav-container ${menuOpen ? 'active' : ''}`}>
-         <img src="./image/codeburger-logo.png" alt="Photo"/>
-      
+    <nav className='fixed top-0 z-[100] w-screen bg-orange-400 dark:bg-orange-900' >
+    <div className='container bg-orange-400 dark:bg-orange-900 fixed justify-center sm:static w-full md:w-max shadow-lg md:shadow-none'>
+      <div className={`nav-container w-screen ${menuOpen ? 'active' : ''}`}>
+        {/* imagen/logo */}
+        <div className='z-20 hidden md:contents'>
+          <img src="/images/codeburger-logo.png" alt="Photo"/>
+        </div>
+
         <div className="nav-toggle" onClick={toggleMenu}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
-        <ul className="nav-links">
-          <li>
-            <a
-              className="nav-link"
-              href="HTML/home.html"
-              target="_blank"
-              rel="noopener"
-              onClick={closeMenu}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a className="nav-link" href="#about" onClick={closeMenu}>
-              Products
-            </a>
-          </li>
-          <li>
-            <a className="nav-link" href="#bingo" onClick={closeMenu}>
-              Contact
-            </a>
-          </li>
-          {/* Add more navigation items as needed */}
-        </ul>
-        <div className="left-buttons"> {/* Container for left buttons */}
-          <button id="darkButton" onClick={toggleTheme}>Dark</button> 
-          <button id="lightButton" onClick={toggleTheme}>Light</button>
+
+        {/* cuerpo de menu */}
+        <div>
+          {/* boton responsive */}
+          <input type='checkbox' name='hamburguer' id='hamburguer' className='peer' hidden/>
+          <label for='hamburguer' className='peer-checked:hamburguer block cursor pointer md:hidden transition p-5 rounded'>
+            <div className='h-0.5 w-6 ml-60 bg-black transition'></div>
+            <div className='mt-2 h-0.5 w-6 ml-60 bg-black transition'></div>
+          </label>
+
+          {/* boton de enlaces */}
+          <div className={`${theme} bg-orange-400 dark:bg-orange-900 z-5 w-max h-max shadow-lg transition flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-max md:static md:translate-x-0 md:flex-row md:shadow-none`}>
+            <div className='px-6 pt-20 flex flex-col md:flex-row md:items-center gap-3 md:p-0 '>
+              <a
+                className="tracking-wide cursor-pointer px-3 py-2 transition nav-link"
+                href="HTML/home.html"
+                target="_blank"
+                rel="noopener"
+                onClick={closeMenu}
+              >
+                Inicio
+              </a>
+
+              <a className="tracking-wide cursor-pointer px-3 py-2 transition nav-link" href="#about" onClick={closeMenu}>
+                Productos
+              </a>
+
+              <a className="tracking-wide cursor-pointer px-3 py-2 transition nav-link" href="#bingo" onClick={closeMenu}>
+                Nosotros
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
+
+    </div>
+  </nav>
   );
 }
 

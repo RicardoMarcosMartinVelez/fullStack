@@ -5,7 +5,6 @@ import ShoppingCart from '@/components/SoppingCart/ShoppingCart'
 import Carousel from '@/components/carousel/Carousel'
 import About_us from '@/components/about/About_us'
 import Footer from '@/components/footer/Footer'
-import ShoppingContextProvider from '@/context/ShoppingContextProvider'
 
 
 
