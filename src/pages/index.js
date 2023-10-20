@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import NavbarProject from '@/components/navbar/NavbarProject'
 import Header from '@/components/header/Header'
-import ShoppingCart from '@/components/SoppingCart/ShoppingCart'
+import ShoppingCart from '@/components/ShoppingCart/ShoppingCart'
 import Carousel from '@/components/carousel/Carousel'
 import About_us from '@/components/about/About_us'
 import Footer from '@/components/footer/Footer'
@@ -14,7 +14,9 @@ export default function Home() {
   return (
     <main className='bg-gradient-to-t from-gray-100 to-gray-400 min-h-screen' id="homepage">
       <NavbarProject />
+      <div id="inicio">
       <Header />
+      </div>
       <Carousel />
       <div id="cart">
       <ShoppingCart />

@@ -65,7 +65,7 @@ const Footer = () => {
                         Navegación
                         </h6>
                         <p class="mb-4">
-                        <a href="#homepage" class="text-neutral-200 dark:text-neutral-200"
+                        <a href="#inicio" class="text-neutral-200 dark:text-neutral-200"
                             >Inicio</a
                         >
                         </p>

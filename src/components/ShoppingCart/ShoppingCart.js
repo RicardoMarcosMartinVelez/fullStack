@@ -5,7 +5,7 @@ import { ShoppingReducer, MenuInitialState } from "@/Reducer/ShoppingReducer";
 import Product from "./Product";
 import CartItem from "./CartItem";
 import { data } from "autoprefixer";
-import CartIcon from "../CartIcon";
+import CartIcon from "./CartIcon";
 import ShoppingContextProvider from '@/context/ShoppingContextProvider'
 
 const ShoppingCart = () => {

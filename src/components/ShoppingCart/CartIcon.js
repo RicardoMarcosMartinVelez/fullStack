@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ShoppingContext } from "@/context/ShoppingContextProvider";
 import { useContext, useEffect, useState } from "react";
-import ShoppingCart from "./SoppingCart/ShoppingCart";
+import ShoppingCart from "./ShoppingCart";
 
 
 

@@ -21,7 +21,7 @@ function NavbarProject() {
       <div className={`nav-container w-screen ${menuOpen ? 'active' : ''}`}>
         {/* imagen/logo */}
         <div className='z-20 hidden md:contents'>
-          <img src="/images/codeburger-logo.png" alt="Photo"/>
+          <img src="/images/codeburger-logo.png" alt="logo_code" />
         </div>
 
         <div className="nav-toggle" onClick={toggleMenu}>
@@ -44,19 +44,18 @@ function NavbarProject() {
             <div className='px-6 pt-20 flex flex-col md:flex-row md:items-center gap-3 md:p-0 '>
               <a
                 className="tracking-wide cursor-pointer px-3 py-2 transition nav-link"
-                href="HTML/home.html"
-                target="_blank"
+                href="#inicio"
                 rel="noopener"
                 onClick={closeMenu}
               >
                 Inicio
               </a>
 
-              <a className="tracking-wide cursor-pointer px-3 py-2 transition nav-link" href="#about" onClick={closeMenu}>
+              <a className="tracking-wide cursor-pointer px-3 py-2 transition nav-link" href="#cart" onClick={closeMenu}>
                 Productos
               </a>
 
-              <a className="tracking-wide cursor-pointer px-3 py-2 transition nav-link" href="#bingo" onClick={closeMenu}>
+              <a className="tracking-wide cursor-pointer px-3 py-2 transition nav-link" href="#aboutus" onClick={closeMenu}>
                 Nosotros
               </a>
             </div>

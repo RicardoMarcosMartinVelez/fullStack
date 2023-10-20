@@ -4,7 +4,7 @@ import 'react-multi-carousel/lib/styles.css';
 export default function CarouseL() {
     const responsive = {
         superLargeDesktop: {
-          // the naming can be any, depends on you.
+          // Breakpoints del Responsive
           breakpoint: { max: 1920, min: 1024 },
           items: 4
         },

@@ -1,4 +1,4 @@
-import Product from "../SoppingCart/Product";
+import Product from "../ShoppingCart/Product";
 import Image from "next/image";
 import { TYPES } from "@/Actions/ShoppingActions";
 import { data, info } from "autoprefixer";
